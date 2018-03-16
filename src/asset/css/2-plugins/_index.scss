@@ -1,0 +1,31 @@
+@import "../../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../../node_modules/slick-carousel/slick/slick-theme.scss";
+
+.slick-list {
+    .slick-loading & {
+        background: #fff url("../img/ajax-loader.gif") center center no-repeat;
+    }
+}
+
+.slick-prev {
+	left: 0;
+	z-index: 1;
+}
+
+.slick-next {
+	right: 10px;
+}
+
+.slick-slide {
+	background-color: black;
+
+	> * {
+		margin: 0 auto;
+	}
+	img{
+		width: 100%;
+		height: auto;
+		max-width: 1920px;	
+	}
+}
+

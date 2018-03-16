@@ -11,36 +11,54 @@ const babel = require('babelify');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const moduleImporter = require('sass-module-importer');
-const favicons = require("gulp-favicons");
-const nunjucks = require('gulp-nunjucks');
+const favicons = require('gulp-favicons');
+const data = require('gulp-data');
+const nunjucks = require('gulp-nunjucks-render');
 const browserSync = require('browser-sync').create();
+const autoprefixer = require('gulp-autoprefixer');
+const cssmin = require('gulp-cssmin');
+const rename = require('gulp-rename');
+const ga = require('gulp-ga');
 
-gulp.task('default', ['js', 'html', 'fonts', 'img', 'styles', 'favicon', 'serve']);
+function requireUncached( $module ) {
+    delete require.cache[require.resolve( $module )];
+    return require( $module );
+}
+
+gulp.task('default', ['js', 'html', 'fonts', 'img', 'compileSass', 'minifyCss', 'favicon', 'serve']); //
 
 gulp.task('serve', () => {
     browserSync.init({
         server: "app"
     });
 
-    gulp.watch('src/js/**/*.js', ['js']);
+    gulp.watch('src/asset/js/**/*.js', ['js']);
     gulp.watch('src/html/**/*.html', ['html']);
-    gulp.watch('src/styles/**/*.scss', ['styles']);
+    gulp.watch('src/html/templates/*', ['html']);
+    gulp.watch('src/asset/css/**/*.scss', ['compileSass']);
 });
 
 gulp.task('html', () => {
     return gulp.src("src/html/**/*.html")
-        .pipe(nunjucks.compile())
-        .pipe(gulp.dest('app'));
+        .pipe( data(function(file){
+            return requireUncached('./src/html/templates/data.json');
+        }))
+        .pipe(nunjucks({ path: ['./src/html/templates'] }))
+        .pipe(ga({url: 'mydomain.com', uid: 'UA-12345678-1', sendPageView: true, require: 'linkid', minify: true}))
+        .pipe(gulp.dest('app'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', () => {
-    return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest('app/fonts'));
+    return gulp.src("src/asset/fonts/**/*")
+        .pipe(gulp.dest('app/assets/fonts'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('img', () => {
-    return gulp.src("src/img/**/*")
-        .pipe(gulp.dest('app/img'));
+    return gulp.src("src/asset/img/**/*")
+        .pipe(gulp.dest('app/assets/img'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('favicon', () => {
@@ -48,12 +66,13 @@ gulp.task('favicon', () => {
         .pipe(favicons({
             pipeHTML: false
         }))
-        .pipe(gulp.dest('app'));
+        .pipe(gulp.dest('app'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('js', () => {
     var b = browserify({
-        entries: './src/js/main.js',
+        entries: 'src/asset/js/main.js',
         debug: true
     }).transform(babel);
 
@@ -63,14 +82,23 @@ gulp.task('js', () => {
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(uglify())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('app'));
+        .pipe(gulp.dest('app/assets/js'))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('styles', () => {
-    return gulp.src('./src/styles/main.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass({ importer: moduleImporter() }))
-        .pipe(concat('bundle.css'))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('app'));
+gulp.task('compileSass', function() {
+  return gulp.src("./src/asset/css/main.scss")
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      .pipe(autoprefixer())
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('app/assets/css'))
+      .pipe(browserSync.stream());
+});
+
+gulp.task("minifyCss", ["compileSass"], function() {
+  return gulp.src("./asset/css/main.css")
+    .pipe(cssmin())
+    .pipe(rename('main.min.css'))
+    .pipe(gulp.dest('app/assets/css'));
 });

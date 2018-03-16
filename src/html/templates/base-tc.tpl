@@ -11,10 +11,10 @@
     {% block pageStyle %}<link rel="stylesheet" type="text/css" href="/assets/css/main.css">{% endblock %}
   </head>
   <body>
-    {% include "./nav.tpl" %}
+    {% include "./nav-tc.tpl" %}
     {% block content %}
     {% endblock %}
-    {% include "./footer.tpl" %}
+    {% include "./footer-tc.tpl" %}
     {% block pageScript %}<script src="/assets/js/bundle.js"></script>{% endblock %}
 
     
