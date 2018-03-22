@@ -10,7 +10,7 @@
     <title>{% block pageTitle %}Title{% endblock %}</title>
     {% block pageStyle %}<link rel="stylesheet" type="text/css" href="/assets/css/main.css">{% endblock %}
   </head>
-  <body>
+  <body class="{% block pageClass %}{% endblock %}">
     {% include "./nav.tpl" %}
     {% block content %}
     {% endblock %}

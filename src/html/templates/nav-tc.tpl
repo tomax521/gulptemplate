@@ -1,10 +1,10 @@
 <header>
 	<nav>
-		{% for mov in tc.header.nav %}
-		<a href="{{ mov.path }}">{{ mov.name }}</a>
+		{% for nav in basic.nav %}
+		<a href="{{ nav.path }}">{{ nav.nameTc }}</a>
 		{% endfor %}
 	</nav>
 	<div class="lang">
-		<a href="/en">Eng</a>
+		<a href="javascript:;" class="btnLang" data-lang="en">Eng</a>
 	</div>
 </header> 
