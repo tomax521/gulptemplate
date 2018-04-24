@@ -1,5 +1,7 @@
 {% extends "base.tpl" %}
 {% set page = basic.page %}
+{% set currentLang = "en" %}
+{% block pageLang %}en{% endblock %}
 {% block pageTitle %}{{ page[0].pageTitleEn }}{% endblock %}
 {% block pageClass %}{{ page[0].pageClass }}{% endblock %}
 
@@ -24,13 +26,17 @@
     </div>
   </div>
 
-  <div class="collapseContainer">
-    <h3 class="collapseTitle">Collapse Expand<span class="collapseTitleIco"></span></h3>
-    <div class="collapseinner">
-      <p>1234455</p>
-      <p>adfaf adsfasffdfa asfdasdffda </p>
-    </div>
+
+  <div class="gulpData">
+    <h1>Use Google Excel export to Json file</h1>
+    <h2>Step 1 Install Add-ons</h2>
+    <p>Google Excel > Add-ons > Get Add-ons > Search 'Json' > Select 'Export Sheet Data' &amp; Click 'Free'</p>
+
+    <h2>Step 2 How to use</h2>
+    <p>Google Excel > Add-ons > Export Sheet Data > Open Sidebar > In 'Json' click 'Export sheet arrays' > Click Export</p>
   </div>
+
+
 </div>
 
 {% endblock %}

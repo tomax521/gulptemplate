@@ -25,7 +25,7 @@ function requireUncached( $module ) {
     return require( $module );
 }
 
-gulp.task('default', ['js', 'html', 'fonts', 'img', 'compileSass', 'minifyCss', 'favicon', 'serve']); //
+gulp.task('default', ['js', 'html', 'fonts', 'img', 'compileSass', 'minifyCss', 'serve']); //
 
 gulp.task('serve', () => {
     browserSync.init({
@@ -51,13 +51,13 @@ gulp.task('html', () => {
 
 gulp.task('fonts', () => {
     return gulp.src("src/asset/fonts/**/*")
-        .pipe(gulp.dest('app/assets/fonts'))
+        .pipe(gulp.dest('app/assets/css/fonts'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('img', () => {
     return gulp.src("src/asset/img/**/*")
-        .pipe(gulp.dest('app/assets/img'))
+        .pipe(gulp.dest('app/assets/images'))
         .pipe(browserSync.stream());
 });
 

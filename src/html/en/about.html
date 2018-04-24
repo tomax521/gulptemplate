@@ -1,27 +1,33 @@
+<!-- Page setting start -->
 {% extends "base.tpl" %}
 {% set page = basic.page %}
+<!-- Page Language -->
+{% set currentLang = "en" %}
 {% block pageTitle %}{{ page[1].pageTitleEn }}{% endblock %}
 {% block pageClass %}{{ page[1].pageClass }}{% endblock %}
+<!-- Page setting end -->
 
 
 
 
 {% block content %}
-<div class="wrapper">
-  <div class="slider">
-    <div>
-      <img src="http://placehold.it/1920x768">
+<!-- Content start -->
+    <div class="wrapper">
+      <div class="slider">
+        <div>
+          <img src="http://placehold.it/1920x768">
+        </div>
+        <div>
+          <img src="http://placehold.it/1920x768">
+        </div>
+        <div> 
+          <img src="http://placehold.it/1920x768">
+        </div>
+        <div>
+          <img src="http://placehold.it/1920x768">
+        </div>
+      </div>
     </div>
-    <div>
-      <img src="http://placehold.it/1920x768">
-    </div>
-    <div> 
-      <img src="http://placehold.it/1920x768">
-    </div>
-    <div>
-      <img src="http://placehold.it/1920x768">
-    </div>
-  </div>
-</div>
 
+<!-- Content end -->
 {% endblock %}
