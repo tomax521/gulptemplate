@@ -1,17 +1,17 @@
 <!-- Page setting start -->
 {% extends "base.tpl" %}
-{% set page = basic.page %}
+{% set page = page %}
 <!-- Page Language -->
 {% set currentLang = "en" %}
-{% block pageTitle %}{{ page[0].pageTitleEn }}{% endblock %}
-{% block pageClass %}{{ page[0].pageClass }}{% endblock %}
+{% block pageTitle %}{{ page[0].page_title_en }}{% endblock %}
+{% block pageClass %}{{ page[0].class_name }}{% endblock %}
 <!-- Page setting end -->
 
 
 
 {% block content %}
-<!-- Content start -->
     <div class="wrapper">
+<!-- Content start -->
       <div class="slider">
         <div>
           <img src="http://placehold.it/1920x768">
@@ -27,8 +27,6 @@
         </div>
       </div>
 
-      {% include "./map.tpl" %}
-    </div>
-
 <!-- Content end -->
+    </div>
 {% endblock %}

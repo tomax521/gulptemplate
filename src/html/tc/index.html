@@ -1,10 +1,10 @@
 <!-- Page setting start -->
 {% extends "base.tpl" %}
-{% set page = basic.page %}
+{% set page = page %}
 <!-- Page Language -->
 {% set currentLang = "zh-hk" %}
-{% block pageTitle %}{{ page[0].pageTitleTc }}{% endblock %}
-{% block pageClass %}{{ page[0].pageClass }}{% endblock %}
+{% block pageTitle %}{{ page[0].page_title_zh }}{% endblock %}
+{% block pageClass %}{{ page[0].class_name }}{% endblock %}
 <!-- Page setting end -->
 
 
@@ -12,8 +12,8 @@
 
 
 {% block content %}
-<!-- Content start -->
     <div class="wrapper">
+<!-- Content start -->
       <div class="slider">
         <div>
           <img src="http://placehold.it/1920x768">
@@ -28,7 +28,7 @@
           <img src="http://placehold.it/1920x768">
         </div>
       </div>
+<!-- Content end -->
     </div>
 
-<!-- Content end -->
 {% endblock %}

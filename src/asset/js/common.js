@@ -1,18 +1,10 @@
 import $ from 'jquery';
 
 $(document).ready(function(){
-	console.log('work');
-
-
-
 	$('.btnLang').bind( "click", function() {
 		chLang($(this).attr('data-lang'));
 	});
 });
-
-
-
-
 
 /**
  * ========================================
@@ -40,3 +32,5 @@ function chLang(lang) {
 
 	document.location=currentPath;
 }
+
+

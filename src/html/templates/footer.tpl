@@ -1,15 +1,15 @@
-<footer>{% set footer = basic %}
-		<nav>{% for nav in footer.nav %}
+<footer>{% set footerNav = nav %}
+		<nav>{% for nav in footerNav %}
 			<a href="{{ nav.path }}">
-				{% if currentLang=="zh-hk" %}{{ nav.nameTc }}
-				{% elseif currentLang=="en" %}{{ nav.nameEn }}{% endif %}
+				{% if currentLang=="zh-hk" %}{{ nav.name_zh }}
+				{% elseif currentLang=="en" %}{{ nav.name_en }}{% endif %}
 			</a>{% endfor %}
 		</nav>
-		<ul>{% for soc in footer.social %}
-			<a href="{{ soc.path }}" class="{{ soc.class }}"></a>
+		<ul>{% set footerSocial = social %}{% for soc in footerSocial %}
+			<a href="{{ soc.path }}" class="{{ soc.class_name }}"></a>
 		{% endfor %}</ul>
-		<p>
-			{% if currentLang=="zh-hk" %}{{ footer.copyrightTc }}&copy;2018
-			{% elseif currentLang=="en" %}{{ footer.copyrightEn }}&copy;2018
+		<p>{% set footerCopyright = copyright %}
+		{% if currentLang=="zh-hk" %}{{ footerCopyright[0].zh }}&copy;2018
+		{% elseif currentLang=="en" %}{{ footerCopyright[0].en }}&copy;2018
 		{% endif %}</p>
 	</footer>

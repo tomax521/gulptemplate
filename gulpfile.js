@@ -38,21 +38,31 @@ gulp.task('serve', () => {
     gulp.watch('src/asset/css/**/*.scss', ['compileSass']);
 });
 
-gulp.task('html', () => {
+gulp.task('build', ['js', 'buildHtml', 'fonts', 'favicon', 'img', 'compileSass', 'minifyCss']); //
+
+gulp.task('buildHtml', () => {
     return gulp.src("src/html/**/*.html")
         .pipe( data(function(file){
             return requireUncached('./src/html/templates/data.json');
         }))
         .pipe(nunjucks({ path: ['./src/html/templates'] }))
         .pipe(ga({url: 'mydomain.com', uid: 'UA-12345678-1', sendPageView: true, require: 'linkid', minify: true}))
+        .pipe(gulp.dest('app'));
+});
+
+gulp.task('html', () => {
+    return gulp.src("src/html/**/*.html")
+        .pipe( data(function(file){
+            return requireUncached('./src/html/templates/data.json');
+        }))
+        .pipe(nunjucks({ path: ['./src/html/templates'] }))
         .pipe(gulp.dest('app'))
         .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', () => {
     return gulp.src("src/asset/fonts/**/*")
-        .pipe(gulp.dest('app/assets/css/fonts'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('app/assets/css/fonts'));
 });
 
 gulp.task('img', () => {
@@ -66,8 +76,7 @@ gulp.task('favicon', () => {
         .pipe(favicons({
             pipeHTML: false
         }))
-        .pipe(gulp.dest('app'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('app'));
 });
 
 gulp.task('js', () => {
@@ -97,7 +106,7 @@ gulp.task('compileSass', function() {
 });
 
 gulp.task("minifyCss", ["compileSass"], function() {
-  return gulp.src("./asset/css/main.css")
+  return gulp.src("app/assets/css/main.css")
     .pipe(cssmin())
     .pipe(rename('main.min.css'))
     .pipe(gulp.dest('app/assets/css'));

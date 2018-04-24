@@ -1,4 +1,6 @@
 import $ from 'jquery';
+import 'bootstrap';
+import 'popper.js';
 import 'slick-carousel';
 
 $('.slider').slick({
@@ -6,3 +8,4 @@ $('.slider').slick({
 	speed: 500
 });
 
+ 

@@ -1,8 +1,8 @@
 <header>
-		<nav>{% for nav in basic.nav %}
+		<nav>{% for nav in nav %}
 			<a href="{{ nav.path }}">
-				{% if currentLang=="zh-hk" %}{{ nav.nameTc }}
-				{% elseif currentLang=="en" %}{{ nav.nameEn }}{% endif %}
+				{% if currentLang=="zh-hk" %}{{ nav.name_zh }}
+				{% elseif currentLang=="en" %}{{ nav.name_en }}{% endif %}
 			</a>{% endfor %}
 		</nav>
 		<div class="lang">{% if currentLang=="zh-hk" %}
