@@ -13,10 +13,12 @@
     {% endblock %}
   </head>
   <body class="{% block pageClass %}{% endblock %}">
+    <div class="pageContainer">
     {% include "./nav.tpl" %}
     {% block content %}
     {% endblock %}
     {% include "./footer.tpl" %}
+    </div>
     {% block pageScript %}
     <script src="/assets/js/bundle.js"></script>
     {% endblock %}

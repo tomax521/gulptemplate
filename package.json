@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-preset-env": "^1.5.0",
     "babelify": "^7.3.0",
@@ -31,6 +30,7 @@
     "gulp-swig": "^0.8.0",
     "gulp-uglify": "^3.0.0",
     "jquery": "^3.2.1",
+    "modernizr": "^3.6.0",
     "popper.js": "^1.14.3",
     "postcss-import": "^10.0.0",
     "postcss-partial-import": "^4.1.0",
