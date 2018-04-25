@@ -38,7 +38,7 @@ gulp.task('serve', () => {
     gulp.watch('src/asset/css/**/*.scss', ['compileSass']);
 });
 
-gulp.task('build', ['js', 'buildHtml', 'fonts', 'favicon', 'img', 'compileSass', 'minifyCss']); //
+gulp.task('build', ['js', 'buildHtml', 'php', 'fonts', 'favicon', 'img', 'compileSass', 'minifyCss']); //
 
 gulp.task('buildHtml', () => {
     return gulp.src("src/html/**/*.html")
@@ -57,6 +57,19 @@ gulp.task('html', () => {
         }))
         .pipe(nunjucks({ path: ['./src/html/templates'] }))
         .pipe(gulp.dest('app'))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('php', () => {
+    return gulp.src("src/php/**/*.php")
+        .pipe( data(function(file){
+            return requireUncached('./src/php/templates/data.json');
+        }))
+        .pipe(nunjucks({ 
+            ext: '.php',
+            path: ['./src/php/templates']
+        }))
+        .pipe(gulp.dest('app/_webContent/packages/k11/language'))
         .pipe(browserSync.stream());
 });
 

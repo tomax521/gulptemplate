@@ -2,40 +2,40 @@
   "page": [
     {
       "page_title_en": "Homepage",
-      "page_title_zh": "主頁",
-      "page_title_zh_cn": "主頁",
+      "page_title_tc": "主頁",
+      "page_title_sc": "主頁",
       "class_name": "home"
     },
     {
       "page_title_en": "About",
-      "page_title_zh": "關於",
-      "page_title_zh_cn": "關於",
+      "page_title_tc": "關於",
+      "page_title_sc": "關於",
       "class_name": "about"
     },
     {
       "page_title_en": "Contact",
-      "page_title_zh": "聯絡",
-      "page_title_zh_cn": "聯絡",
+      "page_title_tc": "聯絡",
+      "page_title_sc": "聯絡",
       "class_name": "contact"
     }
   ],
   "nav": [
     {
       "name_en": "Homepage",
-      "name_zh": "主頁",
-      "name_zh_cn": "主頁",
+      "name_tc": "主頁",
+      "name_sc": "主頁",
       "path": "./"
     },
     {
       "name_en": "About",
-      "name_zh": "關於",
-      "name_zh_cn": "關於",
+      "name_tc": "關於",
+      "name_sc": "關於",
       "path": "./about.html"
     },
     {
       "name_en": "Contact",
-      "name_zh": "聯絡",
-      "name_zh_cn": "聯絡",
+      "name_tc": "聯絡",
+      "name_sc": "聯絡",
       "path": "#"
     }
   ],
@@ -56,34 +56,34 @@
   "copyright": [
     {
       "en": "Copyright&copy;2018",
-      "zh": "版權所有&copy;2018",
-      "zh_cn": "版權所有&copy;2018"
+      "tc": "版權所有&copy;2018",
+      "sc": "版權所有&copy;2018"
     }
   ],
-  "ui-lang": [
+  "uilang": [
     {
       "name": "header_locale_selector_en",
       "en": "EN",
-      "zh": "EN",
-      "zh-cn": "EN"
+      "tc": "EN",
+      "sc": "EN"
     },
     {
-      "name": "header_locale_selector_zh",
+      "name": "header_locale_selector_tc",
       "en": "繁",
-      "zh": "繁",
-      "zh-cn": "繁"
+      "tc": "繁",
+      "sc": "繁"
     },
     {
-      "name": "header_locale_selector_cn",
+      "name": "header_locale_selector_sc",
       "en": "简",
-      "zh": "简",
-      "zh-cn": "简"
+      "tc": "简",
+      "sc": "简"
     },
     {
       "name": "home_title_what_are_you_looking_for",
       "en": "WHAT ARE YOU LOOKING FOR?",
-      "zh": "你在搜尋甚麼？",
-      "zh-cn": "你在搜寻甚麽？"
+      "tc": "你在搜尋甚麼？",
+      "sc": "你在搜寻甚麽？"
     }
   ]
 }
