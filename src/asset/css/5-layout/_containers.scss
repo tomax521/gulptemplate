@@ -2,30 +2,77 @@
 }
 header{
 	height: 100px;
+	display: flex;
+	.logo{
+		display: block;
+		background: black;
+		flex-basis: 20%;
+	}
+	nav{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-basis: 60%;
+		a{
+			flex: 1;
+			text-align: center;
+		}
+	}
+	.lang{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-basis: 20%;
+		a{
+			flex: 1;
+			text-align: center;
+		}
+	}
 }
 footer{
-	height: 100px;
+	display: flex;
+	flex-wrap: wrap;
+	nav{
+		flex-basis: 50%;
+		a{
+			display: inline-block;
+			padding: 0 0 0 1em;
+			&:before{
+				display: inline-block;
+				content: "";
+				height: 1em;
+				width: 1px;
+				margin: 0 1em 0 0;
+				border-left: 1px solid #fff;
+				vertical-align: middle;
+			}
+			&:first-child{
+				&:before{
+					display: none;
+				}
+			}
+		}
+	}
+	.socialBar{
+		flex-basis: 50%;
+		text-align: right;
+		padding: 0 1em;
+		a{
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			background: #000;
+		}
+	}
+	.copyright{
+		flex-basis: 100%;
+		padding: 0 0 0 1em;
+	}
 }
 .wrapper{
 	position: relative;
 	width: 100%;
 	height: auto;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
-}
-section{
-	display: block;
-	position: relative;
-	width: 100%;
-	height: auto;
-	margin: 0;
-	padding: 0;
-}
-
-
-
-
-.googleMap{
-	width: 100%;
-	height: 400px;
 }

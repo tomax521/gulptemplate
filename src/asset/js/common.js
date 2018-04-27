@@ -1,18 +1,24 @@
 import $ from 'jquery';
+var debug = true;
 
 $(document).ready(function(){
 	$('.btnLang').bind( "click", function() {
 		chLang($(this).attr('data-lang'));
 	});
+
+	$('a, button').bind('click',function(){
+		if($(this).data('gacat') != undefined || $(this).data('gacat') != null){
+			var GACat = $(this).data('gacat');
+			var GADes = $(this).data('gades');
+			var GALang = $(this).data('galang');
+			ga('send','event', GACat, GADes, GALang);
+			var message = 'GA event sent to'+ GACat +', Event Details :'+ GADes;
+			cosole(message);
+		}
+	});
 });
 
-/**
- * ========================================
- *
- * chLang
- * ----------------------------------------
- *
- */
+// Change Lang
  
 function chLang(lang) {
 	var currentPath=location.href.toString();
@@ -33,4 +39,9 @@ function chLang(lang) {
 	document.location=currentPath;
 }
 
-
+// Console.log in debug mode
+function cosole(event){
+	if(debug == true){
+		console.log(event);
+	}
+}

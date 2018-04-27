@@ -24,6 +24,9 @@ function requireUncached( $module ) {
     delete require.cache[require.resolve( $module )];
     return require( $module );
 }
+// GA setting
+var GACode = 'UA-12345678-1';
+var GADomain = 'mydomain.com';
 
 gulp.task('default', ['js', 'html', 'fonts', 'img', 'compileSass', 'minifyCss', 'serve']); //
 
@@ -46,7 +49,7 @@ gulp.task('buildHtml', () => {
             return requireUncached('./src/html/templates/data.json');
         }))
         .pipe(nunjucks({ path: ['./src/html/templates'] }))
-        .pipe(ga({url: 'mydomain.com', uid: 'UA-12345678-1', sendPageView: true, require: 'linkid', minify: true}))
+        .pipe(ga({url: GADomain, uid: GACode, sendPageView: true, require: 'linkid', minify: true}))
         .pipe(gulp.dest('app'));
 });
 
@@ -56,6 +59,7 @@ gulp.task('html', () => {
             return requireUncached('./src/html/templates/data.json');
         }))
         .pipe(nunjucks({ path: ['./src/html/templates'] }))
+        .pipe(ga({url: GADomain, uid: GACode, sendPageView: true, require: 'linkid', minify: true}))
         .pipe(gulp.dest('app'))
         .pipe(browserSync.stream());
 });
