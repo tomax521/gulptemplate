@@ -8,8 +8,6 @@
 		<ul>{% set footerSocial = social %}{% for soc in footerSocial %}
 			<a href="{{ soc.path }}" class="{{ soc.class_name }}"></a>
 		{% endfor %}</ul>
-		<p>{% set footerCopyright = copyright %}
-		{% if currentLang=="zh-hk" %}{{ footerCopyright[0].tc | safe }}
-		{% elseif currentLang=="en" %}{{ footerCopyright[0].en | safe }}
-		{% endif %}</p>
+		<p>{% if currentLang=="zh-hk" %}{{ uilang.footer_copyright.tc | safe }}
+		{% elseif currentLang=="en" %}{{ uilang.footer_copyright.en | safe }}{% endif %}</p>
 	</footer>

@@ -53,37 +53,36 @@
       "path": "./"
     }
   ],
-  "copyright": [
-    {
-      "en": "Copyright&copy;2018",
-      "tc": "版權所有&copy;2018",
-      "sc": "版權所有&copy;2018"
-    }
-  ],
-  "uilang": [
-    {
+  "uilang": {
+    "header_locale_selector_en": {
       "name": "header_locale_selector_en",
       "en": "EN",
       "tc": "EN",
       "sc": "EN"
     },
-    {
-      "name": "header_locale_selector_tc",
+    "header_locale_selector_zh": {
+      "name": "header_locale_selector_zh",
       "en": "繁",
       "tc": "繁",
       "sc": "繁"
     },
-    {
-      "name": "header_locale_selector_sc",
+    "header_locale_selector_cn": {
+      "name": "header_locale_selector_cn",
       "en": "简",
       "tc": "简",
       "sc": "简"
     },
-    {
+    "home_title_what_are_you_looking_for": {
       "name": "home_title_what_are_you_looking_for",
       "en": "WHAT ARE YOU LOOKING FOR?",
       "tc": "你在搜尋甚麼？",
       "sc": "你在搜寻甚麽？"
+    },
+    "footer_copyright": {
+      "name": "footer_copyright",
+      "en": "Copyright©2018",
+      "tc": "版權所有©2018",
+      "sc": "版權所有©2018"
     }
-  ]
+  }
 }
