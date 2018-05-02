@@ -1,4 +1,4 @@
-<header class="bg-info">
+<header id="header">
 		<a href="javascript:;" class="logo"></a>
 		<nav>{% for nav in nav %}
 			<a class="text-white" href="{{ nav.path }}">

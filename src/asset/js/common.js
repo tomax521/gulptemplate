@@ -45,3 +45,19 @@ function cosole(event){
 		console.log(event);
 	}
 }
+
+// floating header on scroll up
+
+var pageYOffset = 0;
+window.addEventListener("scroll", function(){
+   var st = window.pageYOffset || document.documentElement.scrollTop;
+   var header = document.getElementById("header");
+   if (st > pageYOffset){
+       // downscroll code
+      header.style.top = 0+'px';
+   } else {
+      // upscroll code
+      header.style.top = st+'px';
+   }
+   pageYOffset = st;
+}, false);
