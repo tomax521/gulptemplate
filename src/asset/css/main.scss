@@ -6,14 +6,14 @@
 // 1- Import bootstrap framework
 @import '1-frameworks/index';
 
-// 2 - Import plugins
+// 2 - Import plugins(All plugin css should be import here)
 @import '2-plugins/index';
 
-// 3 - Import base style, custom variables and mixins
+// 3 - Import base style(fonts & image paths, colour, unit size), custom variables and mixins
 @import '3-base/index';
 
 // 4 - Import modules
 @import '4-modules/index';
 
-// 5 - Import layout  styles
+// 5 - Import layout styles
 @import '5-layout/index';

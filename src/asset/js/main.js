@@ -1,2 +1,5 @@
-import './slick';
-import './api';
+import './vendor';
+import './common';
+import './functions';
+
+

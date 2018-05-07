@@ -1,0 +1,28 @@
+{
+  "uilang": [
+    {
+      "name": "header_locale_selector_en",
+      "en": "EN",
+      "tc": "EN",
+      "sc": "EN"
+    },
+    {
+      "name": "header_locale_selector_tc",
+      "en": "繁",
+      "tc": "繁",
+      "sc": "繁"
+    },
+    {
+      "name": "header_locale_selector_sc",
+      "en": "简",
+      "tc": "简",
+      "sc": "简"
+    },
+    {
+      "name": "home_title_what_are_you_looking_for",
+      "en": "WHAT ARE YOU LOOKING FOR?",
+      "tc": "你在搜尋甚麼？",
+      "sc": "你在搜寻甚麽？"
+    }
+  ]
+}

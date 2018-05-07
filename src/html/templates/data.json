@@ -1,76 +1,88 @@
 {
-    "en":{
-    	"header":{
-    		"nav":[
-		    	{
-		    		"name":"Home",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"About",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"Contact",
-		    		"path":"#"
-		    	}
-		    ],
-		    "social":""
-		},
-	    "footer":{
-    		"nav":[
-		    	{
-		    		"name":"Home",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"About",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"Contact",
-		    		"path":"#"
-		    	}
-		    ],
-		    "social":"",
-		    "copyright":"Copyright"
-	    }
+  "page": [
+    {
+      "page_title_en": "Homepage",
+      "page_title_tc": "主頁",
+      "page_title_sc": "主頁",
+      "class_name": "home"
     },
-    "tc":{
-    	"header":{
-    		"nav":[
-		    	{
-		    		"name":"主頁",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"關於",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"聯絡",
-		    		"path":"#"
-		    	}
-		    ],
-		    "social":""
-		},
-	    "footer":{
-    		"nav":[
-		    	{
-		    		"name":"主頁",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"關於",
-		    		"path":"#"
-		    	},
-		    	{
-		    		"name":"聯絡",
-		    		"path":"#"
-		    	}
-		    ],
-		    "social":"",
-		    "copyright":"版權所有"
-	    }
+    {
+      "page_title_en": "About",
+      "page_title_tc": "關於",
+      "page_title_sc": "關於",
+      "class_name": "about"
+    },
+    {
+      "page_title_en": "Contact",
+      "page_title_tc": "聯絡",
+      "page_title_sc": "聯絡",
+      "class_name": "contact"
     }
+  ],
+  "nav": [
+    {
+      "name_en": "Homepage",
+      "name_tc": "主頁",
+      "name_sc": "主頁",
+      "path": "./"
+    },
+    {
+      "name_en": "About",
+      "name_tc": "關於",
+      "name_sc": "關於",
+      "path": "./about.html"
+    },
+    {
+      "name_en": "Contact",
+      "name_tc": "聯絡",
+      "name_sc": "聯絡",
+      "path": "#"
+    }
+  ],
+  "social": [
+    {
+      "class_name": "icoFB",
+      "path": "./"
+    },
+    {
+      "class_name": "icoIG",
+      "path": "./"
+    },
+    {
+      "class_name": "icoWB",
+      "path": "./"
+    }
+  ],
+  "uilang": {
+    "header_locale_selector_en": {
+      "name": "header_locale_selector_en",
+      "en": "EN",
+      "tc": "EN",
+      "sc": "EN"
+    },
+    "header_locale_selector_zh": {
+      "name": "header_locale_selector_zh",
+      "en": "繁",
+      "tc": "繁",
+      "sc": "繁"
+    },
+    "header_locale_selector_cn": {
+      "name": "header_locale_selector_cn",
+      "en": "简",
+      "tc": "简",
+      "sc": "简"
+    },
+    "home_title_what_are_you_looking_for": {
+      "name": "home_title_what_are_you_looking_for",
+      "en": "WHAT ARE YOU LOOKING FOR?",
+      "tc": "你在搜尋甚麼？",
+      "sc": "你在搜寻甚麽？"
+    },
+    "footer_copyright": {
+      "name": "footer_copyright",
+      "en": "Copyright©2018",
+      "tc": "版權所有©2018",
+      "sc": "版權所有©2018"
+    }
+  }
 }
