@@ -1,5 +1,5 @@
-import './vendor';
-import './common';
-import './functions';
+import $ from 'jquery';
 
-
+$(document).ready(function(){
+    console.log('work');
+});
